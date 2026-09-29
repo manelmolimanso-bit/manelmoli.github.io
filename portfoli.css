@@ -1,0 +1,312 @@
+/* Imatge de fons que ocupa tota la pantalla i es queda fixa en fer scroll */
+body {
+    background-image: url("wallpaperbody.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Caixa del titol principal amb fons translucid i desenfocament */
+.encabezado {
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    height: 90px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Tipografia i color del text de la capcalera */
+.titolencabezado {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    margin: 0;
+}
+
+/* Contenidor central que separa les seccions verticalment */
+.contingut-principal {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Forma arrodonida de color aqua usada com a titol de seccio */
+.titolindependent {
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: black;
+    border-radius: 50px;
+    background-color: aqua;
+    width: fit-content;
+    margin: 0 auto 20px auto;
+    padding: 6px 18px;
+}
+
+/* Agrupador flexible per alinear targetes en fila */
+.dadespersonals {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+}
+
+/* Estil base de les targetes amb fons transparent i ombra */
+.tarjeta {
+    width: fit-content;
+    max-width: 450px;
+    background-color: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    padding: 40px;
+    flex: 1 1 350px;
+    box-sizing: border-box;
+}
+
+/* Treu els punts per defecte de la llista dhabilitats */
+.llista-habilitats {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Text dels elements de la llista dhabilitats */
+.llista-habilitats li {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: paleturquoise;
+    line-height: 1.4;
+}
+
+/* Destaca les paraules clau en negreta i color clar */
+.categoria {
+    font-weight: bold;
+    color: blanchedalmond;
+}
+
+/* Paragrafs de text generals */
+p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: paleturquoise;
+    line-height: 1.4;
+}
+
+/* Contenidor per a les targetes destudis i certificats */
+.estudis-projectes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+}
+
+/* Targeta destudis i formacio */
+.tarjeta-estudis {
+    width: fit-content;
+    max-width: 450px;
+    background-color: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    padding: 40px;
+    flex: 1 1 350px;
+    box-sizing: border-box;
+}
+
+/* Titol negre arrodonit dins de la targeta destudis */
+.titolESTUDI-PROJECTE {
+    width: fit-content;
+    background-color: black;
+    color: white;
+    margin: 0 auto 20px auto;
+    padding: 6px 18px;
+    border-radius: 50px;
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* Llista vertical per als estudis i certificats */
+.llista-estudis {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Elements individuals de la llista destudis */
+.llista-estudis li {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    line-height: 1.4;
+}
+
+/* Noms de titulacio destacats en negreta */
+.categoria-estudis {
+    font-weight: bold;
+    color: blanchedalmond;
+}
+
+/* Contenidor que limita lamplada de la seccio de projectes */
+.seccio-projectes {
+    max-width: 950px;
+    margin: 0 auto 40px auto;
+    width: 100%;
+}
+
+/* Fila centrada per als botons de filtre */
+.botons-filtre {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+/* Estil base dels botons de filtre */
+.boto-filtre {
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 8px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    transition: 0.2s ease-in-out;
+}
+
+/* Canvi de color quan el boto esta actiu o es passa el ratoli */
+.boto-filtre:hover,
+.boto-filtre.actiu {
+    background-color: aqua;
+    color: black;
+    font-weight: bold;
+    border-color: aqua;
+}
+
+/* Distribucio flexible per mostrar les targetes de projectes en graella */
+.graella-projectes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+}
+
+/* Targeta individual per a cada projecte */
+.tarjeta-projecte {
+    background-color: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    padding: 24px;
+    flex: 1 1 380px;
+    max-width: 440px;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: paleturquoise;
+}
+
+/* Titol del projecte dins de la targeta */
+.tarjeta-projecte h4 {
+    margin: 12px 0 8px 0;
+    color: white;
+    font-size: 1.2rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Etiqueta petita que indica la categoria del projecte */
+.etiqueta-categoria {
+    background-color: black;
+    color: aqua;
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    display: inline-block;
+}
+
+/* Targeta centrada per a la descarrega del curriculum */
+.currículum {
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    text-align: center;
+    margin: 40px auto;
+    max-width: 400px;
+    padding: 30px 20px;
+    box-sizing: border-box;
+}
+
+/* Text del titol de la targeta de descarrega */
+.Descarregar {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: white;
+    margin: 0 0 20px 0;
+}
+
+/* Boto per descarregar el document PDF */
+.boto-descarga {
+    display: inline-block;
+    background-color: aqua;
+    color: black;
+    text-decoration: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-weight: bold;
+    padding: 10px 24px;
+    border-radius: 25px;
+    transition: 0.2s ease-in-out;
+}
+
+/* Efecte visual en passar el ratoli sobre el boto de descarrega */
+.boto-descarga:hover {
+    background-color: white;
+    transform: scale(1.05);
+}
+
+/* Transicio suau de moviment per a les targetes */
+.tarjeta,
+.tarjeta-estudis,
+.tarjeta-projecte,
+.currículum {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Elevacio lleugera de la targeta en passar el ratoli per sobre */
+.tarjeta:hover,
+.tarjeta-estudis:hover,
+.tarjeta-projecte:hover,
+.currículum:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+    border-color: rgba(0, 255, 255, 0.5);
+}
+
+/* Estat inicial de les targetes abans de visualitzarles amb scroll */
+.animar-scroll {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Estat quan la targeta es fa visible a la pantalla */
+.animar-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

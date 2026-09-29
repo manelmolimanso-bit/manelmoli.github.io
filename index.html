@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <!-- Ajusta la pagina a la pantalla de qualsevol dispositiu -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolis Manel Molinera</title>
+    <!-- Enllac al full destils CSS extern -->
+    <link rel="stylesheet" href="portfoli.css">
+</head>
+<body>
+
+    <!-- Capcalera principal de la pagina -->
+    <header class="encabezado">
+        <h1 class="titolencabezado">FULLSTACK DEVELOPER MMM</h1>
+    </header>
+
+    <!-- Contingut principal del portafolis -->
+    <main class="contingut-principal">
+
+        <!-- Seccio de dades personals i habilitats -->
+        <div class="dadespersonals">
+            <!-- Targeta sobre mi amb animacio de scroll -->
+            <div class="tarjeta animar-scroll">
+                <h3 class="titolindependent">SOBRE MÍ</h3>
+                <p>Me llamo Manel Molinera Manso y soy desarrollador fullstack. Me gusta el mundo del diseño y desarrollo de aplicaciones multiplataforma y desarrollo web. También me gusta la parte de UI/UX para personalizar elementos de la interfaz por donde el usuario va a navegar.
+                    <br><br>
+                    Me gusta bastante el fútbol y también soy amante a las películas y series, en especial las que tienen que ver con Marvel, DC y películas Bloobuster.
+                </p>
+            </div>
+
+            <!-- Targeta dhabilitats tecniques amb animacio de scroll -->
+            <div class="tarjeta animar-scroll">
+                <h3 class="titolindependent">HABILIDADES</h3>
+                <ul class="llista-habilitats">
+                    <li><span class="categoria">LENGUAJES:</span> JAVA, PHP, HTML y CSS, C#, Visual Basic .NET, XML, JSON, DOM</li>
+                    <li><span class="categoria">ENTORNOS DE DESARROLLO:</span> IDE Eclipse, Visual Studio Code</li>
+                    <li><span class="categoria">BASE DE DATOS:</span> MySQL, SQL, diseño de base de datos relacionales</li>
+                    <li><span class="categoria">MODELADO:</span> Diagrama UML, diagrama de estados, diagrama de secuencias</li>
+                    <li><span class="categoria">SISTEMAS:</span> Administración de Windows y Linux, gestión de redes LAN</li>
+                    <li><span class="categoria">HARDWARE:</span> Montaje y desmontaje de PCs, emparejamiento de cables fibra óptica y ethernet</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Seccio destudis i certificacions -->
+        <div class="estudis-projectes">
+            <!-- Targeta destudis academics -->
+            <div class="tarjeta-estudis animar-scroll">
+                <h3 class="titolESTUDI-PROJECTE">ESTUDIS</h3>
+                <ul class="llista-estudis">
+                    <li><span class="categoria-estudis">CICLO FORMATIVO DE GRADO SUPERIOR:</span> Desarrollo de aplicaciones multiplataforma (DAM)</li>
+                    <li><span class="categoria-estudis">CICLO FORMATIVO DE GRADO MEDIO:</span> Sistemas Microinformáticos y Redes (SMR)</li>
+                    <li><span class="categoria-estudis">ESO:</span> GRADUADO en ESO</li>
+                </ul>
+            </div>
+
+            <!-- Targeta de cursos i certificats -->
+            <div class="tarjeta-estudis animar-scroll">
+                <h3 class="titolESTUDI-PROJECTE">CERTIFICATS</h3>
+                <ul class="llista-estudis">
+                    <li><span class="categoria-estudis">CURS:</span> Fonaments de Desenvolupament Web (HTML5, CSS3)</li>
+                    <li><span class="categoria-estudis">CURS:</span> Programació Orientada a Objectes en Java</li>
+                    <li><span class="categoria-estudis">IDIOMES:</span> Català, Castellà, Anglès tècnic</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Seccio de projectes realitzats i filtres -->
+        <div class="seccio-projectes">
+            <h3 class="titolindependent">PROJECTES</h3>
+
+            <!-- Botons per filtrar els projectes segons la categoria -->
+            <div class="botons-filtre">
+                <button class="boto-filtre actiu" onclick="filtrarProjectes('tots')">Tots</button>
+                <button class="boto-filtre" onclick="filtrarProjectes('web')">Web</button>
+                <button class="boto-filtre" onclick="filtrarProjectes('app')">Aplicacions</button>
+                <button class="boto-filtre" onclick="filtrarProjectes('bd')">Base de Dades</button>
+            </div>
+
+            <!-- Graella on es mostren totes les targetes de projectes -->
+            <div class="graella-projectes">
+                <!-- Projecte 1 web -->
+                <div class="tarjeta-projecte animar-scroll" data-categoria="web">
+                    <span class="etiqueta-categoria">WEB</span>
+                    <h4>Portafolis Web Personal</h4>
+                    <p>Disseny i maquetació d'un lloc web responsiu amb efectes visuals, filtres dinàmics i bona accessibilitat.</p>
+                    <span class="categoria">Tecnologies:</span> HTML5, CSS3, JavaScript
+                </div>
+
+                <!-- Projecte 2 aplicacio -->
+                <div class="tarjeta-projecte animar-scroll" data-categoria="app">
+                    <span class="etiqueta-categoria">APLICACIONS</span>
+                    <h4>Gestor d'Inventari Multiplataforma</h4>
+                    <p>Aplicació d'escriptori orientada a la gestió de productes, entrades i sortides amb interfície interactiva.</p>
+                    <span class="categoria">Tecnologies:</span> Java, Swing, Eclipse
+                </div>
+
+                <!-- Projecte 3 base de dades -->
+                <div class="tarjeta-projecte animar-scroll" data-categoria="bd">
+                    <span class="etiqueta-categoria">BASE DE DADES</span>
+                    <h4>Sistema de Reserves Relacional</h4>
+                    <p>Modelat conceptual, lògic i físic de dades amb implementació de consultes avançades i integritat referencial.</p>
+                    <span class="categoria">Tecnologies:</span> MySQL, SQL Workbench
+                </div>
+
+                <!-- Projecte 4 aplicacio -->
+                <div class="tarjeta-projecte animar-scroll" data-categoria="app">
+                    <span class="etiqueta-categoria">APLICACIONS</span>
+                    <h4>Client de Xat Local</h4>
+                    <p>Programa de comunicació bidireccional en xarxa local emprant sòcols i sincronització de processos.</p>
+                    <span class="categoria">Tecnologies:</span> C#, .NET
+                </div>
+            </div>
+        </div>
+
+        <!-- Seccio de descarrega del document del curriculum -->
+        <div class="currículum animar-scroll">
+            <h3 class="Descarregar">Descarregar Currículum</h3>
+            <!-- Enllac per descarregar directament el fitxer PDF -->
+            <a href="curriculum.pdf" download class="boto-descarga">Descarregar PDF</a>
+        </div>
+    </main>
+
+    <!-- Enllac al fitxer JavaScript extern -->
+    <script src="portfoli.js"></script>
+</body>
+</html>

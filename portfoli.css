@@ -1,170 +1,285 @@
+/* ==============================
+   FONS I ESTIL GENERAL
+   ============================== */
+
 /* Imatge de fons que ocupa tota la pantalla i es queda fixa en fer scroll */
 body {
+    background-color: #05080c;
     background-image: url("wallpaperbody.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     margin: 0;
     padding: 20px;
-}
-
-/* Caixa del titol principal amb fons translucid i desenfocament */
-.encabezado {
-    background-color: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(5px);
-    height: 90px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 50px;
-    max-width: 800px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Tipografia i color del text de la capcalera */
-.titolencabezado {
-    text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
     color: white;
-    margin: 0;
 }
+
+/* Scroll suau quan es navega dins la pagina */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Tipografia comuna per a titols i textos */
+h1, h3, h4, p, li, button, a {
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+p {
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.7;
+}
+
+
+/* ==============================
+   CAPCALERA
+   ============================== */
+
+/* Caixa del titol amb la imatge tecnologica de fons */
+.encabezado {
+    background-image: linear-gradient(rgba(5, 10, 20, 0.3), rgba(5, 10, 20, 0.65)), url("portafoliotecnologicofondo.jpg");
+    background-size: 100% 100%, 140% auto;
+    background-position: 0 0, 0% 50%;
+    /* Entra des de dalt i la imatge de fons es mou lentament */
+    animation: entrar-dalt 0.8s ease-out, moure-fons 20s ease-in-out infinite alternate;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+/* Titol principal amb degradat de color */
+.titolencabezado {
+    margin: 0 0 10px 0;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    background-image: linear-gradient(90deg, white, aqua, #19e3b1, aqua, white);
+    background-size: 200% auto;
+    /* El degradat del titol es desplaca com un reflex de llum */
+    animation: brillar-titol 6s linear infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+/* Subtitol petit sota el titol */
+.encabezado .subtitol {
+    margin: 0;
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.8);
+    /* Apareix una mica despres del titol */
+    animation: aparicio-suau 1.2s ease-out 0.4s both;
+}
+
+
+/* ==============================
+   CONTINGUT PRINCIPAL
+   ============================== */
 
 /* Contenidor central que separa les seccions verticalment */
 .contingut-principal {
-    margin-top: 50px;
+    max-width: 1000px;
+    margin: 50px auto 0 auto;
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
 
-/* Forma arrodonida de color aqua usada com a titol de seccio */
+/* Titol de cada seccio (pastilla de color aqua) */
 .titolindependent {
-    text-align: center;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: black;
-    border-radius: 50px;
-    background-color: aqua;
     width: fit-content;
     margin: 0 auto 20px auto;
-    padding: 6px 18px;
+    padding: 8px 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    color: aqua;
+    background-color: rgba(0, 255, 255, 0.1);
+    border: 1px solid rgba(0, 255, 255, 0.5);
+    border-radius: 50px;
+    /* Llum que respira al voltant de la pastilla */
+    animation: llum-titol 3s ease-in-out infinite alternate;
 }
 
-/* Agrupador flexible per alinear targetes en fila */
+
+/* ==============================
+   TARGETES DE VIDRE (transparents)
+   ============================== */
+
+/* Mateix estil per a totes les targetes */
+.tarjeta,
+.tarjeta-estudis,
+.tarjeta-projecte,
+.currículum {
+    background-color: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+}
+
+
+/* ==============================
+   SOBRE MI I HABILITATS
+   ============================== */
+
+/* Agrupador per alinear targetes en fila */
 .dadespersonals {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     gap: 24px;
 }
 
-/* Estil base de les targetes amb fons transparent i ombra */
 .tarjeta {
-    width: fit-content;
-    max-width: 450px;
-    background-color: rgba(255, 255, 255, 0.10);
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    border-radius: 20px;
-    padding: 40px;
-    flex: 1 1 350px;
-    box-sizing: border-box;
+    flex: 1 1 400px;
+    padding: 35px;
 }
 
-/* Treu els punts per defecte de la llista dhabilitats */
+.tarjeta p {
+    margin: 0;
+}
+
+/* Llista d'habilitats sense punts */
 .llista-habilitats {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
 }
 
-/* Text dels elements de la llista dhabilitats */
 .llista-habilitats li {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: paleturquoise;
-    line-height: 1.4;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: padding-left 0.3s ease;
 }
 
-/* Destaca les paraules clau en negreta i color clar */
+/* La fila es desplaca cap a la dreta en passar el ratoli */
+.llista-habilitats li:hover {
+    padding-left: 10px;
+}
+
+.llista-habilitats li:last-child {
+    border-bottom: none;
+}
+
+/* Nom de la categoria (LENGUAJES, MODELADO...) */
 .categoria {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.75rem;
     font-weight: bold;
-    color: blanchedalmond;
+    letter-spacing: 2px;
+    color: aqua;
 }
 
-/* Paragrafs de text generals */
-p {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: paleturquoise;
-    line-height: 1.4;
+/* Contenidor de les etiquetes */
+.xips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
-/* Contenidor per a les targetes destudis i certificats */
+/* Etiqueta petita (cada tecnologia o habilitat) */
+.xip {
+    display: inline-block;
+    padding: 4px 12px;
+    font-size: 0.85rem;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    transition: 0.2s ease-in-out;
+}
+
+.xip:hover {
+    background-color: rgba(0, 255, 255, 0.2);
+    border-color: aqua;
+    transform: translateY(-3px);
+}
+
+
+/* ==============================
+   ESTUDIS I CERTIFICATS
+   ============================== */
+
+/* Contenidor de les dues targetes */
 .estudis-projectes {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     gap: 24px;
 }
 
-/* Targeta destudis i formacio */
 .tarjeta-estudis {
-    width: fit-content;
-    max-width: 450px;
-    background-color: rgba(255, 255, 255, 0.10);
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    border-radius: 20px;
-    padding: 40px;
-    flex: 1 1 350px;
-    box-sizing: border-box;
+    flex: 1 1 400px;
+    padding: 35px;
 }
 
-/* Titol negre arrodonit dins de la targeta destudis */
+/* Titol lila de la targeta d'estudis */
 .titolESTUDI-PROJECTE {
     width: fit-content;
-    background-color: black;
-    color: white;
-    margin: 0 auto 20px auto;
-    padding: 6px 18px;
-    border-radius: 50px;
+    margin: 0 auto 25px auto;
+    padding: 8px 20px;
     text-align: center;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    color: #c4b5fd;
+    background-color: rgba(167, 139, 250, 0.15);
+    border: 1px solid rgba(167, 139, 250, 0.5);
+    border-radius: 50px;
+    animation: llum-titol 3s ease-in-out infinite alternate;
 }
 
-/* Llista vertical per als estudis i certificats */
+/* Llista vertical amb una ratlla lila a l'esquerra */
 .llista-estudis {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
 }
 
-/* Elements individuals de la llista destudis */
 .llista-estudis li {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: white;
-    line-height: 1.4;
+    margin-bottom: 20px;
+    padding-left: 15px;
+    border-left: 3px solid #a78bfa;
+    line-height: 1.5;
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-/* Noms de titulacio destacats en negreta */
+/* L'element es mou i la ratlla canvia a color aqua */
+.llista-estudis li:hover {
+    transform: translateX(8px);
+    border-left-color: aqua;
+}
+
+.llista-estudis li:last-child {
+    margin-bottom: 0;
+}
+
+/* Nom de la titulacio destacat */
 .categoria-estudis {
+    display: block;
+    margin-bottom: 3px;
+    font-size: 0.75rem;
     font-weight: bold;
-    color: blanchedalmond;
+    letter-spacing: 2px;
+    color: #c4b5fd;
 }
 
-/* Contenidor que limita lamplada de la seccio de projectes */
+
+/* ==============================
+   PROJECTES
+   ============================== */
+
 .seccio-projectes {
-    max-width: 950px;
-    margin: 0 auto 40px auto;
+    margin: 10px auto 40px auto;
     width: 100%;
 }
 
@@ -172,20 +287,20 @@ p {
 .botons-filtre {
     display: flex;
     justify-content: center;
-    gap: 12px;
-    margin-bottom: 24px;
     flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
 }
 
 /* Estil base dels botons de filtre */
 .boto-filtre {
-    background-color: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     color: white;
-    padding: 8px 18px;
+    padding: 9px 22px;
     border-radius: 20px;
     cursor: pointer;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 0.9rem;
     transition: 0.2s ease-in-out;
 }
 
@@ -198,7 +313,16 @@ p {
     border-color: aqua;
 }
 
-/* Distribucio flexible per mostrar les targetes de projectes en graella */
+/* Els botons pugen lleugerament i s'enfonsen en fer clic */
+.boto-filtre:hover {
+    transform: translateY(-3px);
+}
+
+.boto-filtre:active {
+    transform: scale(0.95);
+}
+
+/* Targetes de projectes una al costat de l'altra */
 .graella-projectes {
     display: flex;
     flex-wrap: wrap;
@@ -206,57 +330,93 @@ p {
     gap: 24px;
 }
 
-/* Targeta individual per a cada projecte */
 .tarjeta-projecte {
-    background-color: rgba(255, 255, 255, 0.10);
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    border-radius: 20px;
-    padding: 24px;
-    flex: 1 1 380px;
-    max-width: 440px;
-    box-sizing: border-box;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: paleturquoise;
+    flex: 1 1 280px;
+    max-width: 320px;
+    padding: 25px;
+    border-top: 4px solid aqua;
 }
 
-/* Titol del projecte dins de la targeta */
-.tarjeta-projecte h4 {
-    margin: 12px 0 8px 0;
-    color: white;
-    font-size: 1.2rem;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+/* Cada categoria te el seu color */
+.tarjeta-projecte[data-categoria="web"] {
+    border-top-color: aqua;
+}
+
+.tarjeta-projecte[data-categoria="app"] {
+    border-top-color: #a78bfa;
+}
+
+.tarjeta-projecte[data-categoria="bd"] {
+    border-top-color: #19e3b1;
 }
 
 /* Etiqueta petita que indica la categoria del projecte */
 .etiqueta-categoria {
-    background-color: black;
-    color: aqua;
-    font-size: 0.75rem;
-    padding: 4px 10px;
-    border-radius: 12px;
-    font-weight: bold;
-    letter-spacing: 0.5px;
     display: inline-block;
+    padding: 4px 12px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: aqua;
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 1px solid aqua;
+    border-radius: 20px;
 }
+
+.tarjeta-projecte[data-categoria="app"] .etiqueta-categoria {
+    color: #c4b5fd;
+    border-color: #a78bfa;
+}
+
+.tarjeta-projecte[data-categoria="bd"] .etiqueta-categoria {
+    color: #19e3b1;
+    border-color: #19e3b1;
+}
+
+/* Titol del projecte dins de la targeta */
+.tarjeta-projecte h4 {
+    margin: 15px 0 10px 0;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.tarjeta-projecte p {
+    margin: 0 0 15px 0;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+/* Linia amb les tecnologies al final de la targeta */
+.tecnologies {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.tecnologies .categoria {
+    display: inline;
+    margin: 0 4px 0 0;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+
+/* ==============================
+   CURRICULUM
+   ============================== */
 
 /* Targeta centrada per a la descarrega del curriculum */
 .currículum {
-    background-color: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
     text-align: center;
-    margin: 40px auto;
-    max-width: 400px;
-    padding: 30px 20px;
-    box-sizing: border-box;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 500px;
+    padding: 35px 20px;
 }
 
-/* Text del titol de la targeta de descarrega */
 .Descarregar {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     color: white;
     margin: 0 0 20px 0;
 }
@@ -264,49 +424,195 @@ p {
 /* Boto per descarregar el document PDF */
 .boto-descarga {
     display: inline-block;
-    background-color: aqua;
+    background-image: linear-gradient(90deg, aqua, #19e3b1);
     color: black;
     text-decoration: none;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-weight: bold;
-    padding: 10px 24px;
+    padding: 12px 28px;
     border-radius: 25px;
     transition: 0.2s ease-in-out;
+    /* Pols de llum constant per cridar l'atencio */
+    animation: pols-boto 2.5s ease-in-out infinite;
+}
+
+/* Fletxa que rebota */
+.boto-descarga::after {
+    content: "↓";
+    display: inline-block;
+    margin-left: 8px;
+    animation: rebotar 1.2s ease-in-out infinite;
 }
 
 /* Efecte visual en passar el ratoli sobre el boto de descarrega */
 .boto-descarga:hover {
-    background-color: white;
-    transform: scale(1.05);
+    transform: scale(1.07);
 }
 
-/* Transicio suau de moviment per a les targetes */
-.tarjeta,
-.tarjeta-estudis,
-.tarjeta-projecte,
-.currículum {
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+
+/* ==============================
+   PEU DE PAGINA
+   ============================== */
+
+.peu {
+    max-width: 1000px;
+    margin: 20px auto 0 auto;
+    padding-top: 15px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Elevacio lleugera de la targeta en passar el ratoli per sobre */
-.tarjeta:hover,
-.tarjeta-estudis:hover,
-.tarjeta-projecte:hover,
-.currículum:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
-    border-color: rgba(0, 255, 255, 0.5);
-}
+
+/* ==============================
+   ANIMACIONS
+   ============================== */
 
 /* Estat inicial de les targetes abans de visualitzarles amb scroll */
 .animar-scroll {
     opacity: 0;
     transform: translateY(35px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transition: opacity 0.6s ease-out, transform 0.4s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    /* Si el JavaScript falla, les targetes apareixen soles al cap d'1.2 segons */
+    animation: aparicio-segura 0.6s ease-out 1.2s forwards;
+}
+
+@keyframes aparicio-segura {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Estat quan la targeta es fa visible a la pantalla */
 .animar-scroll.visible {
     opacity: 1;
     transform: translateY(0);
+    animation: none;
+}
+
+/* Elevacio lleugera de la targeta en passar el ratoli per sobre
+   (es posa .visible perque tingui mes prioritat que l'estat anterior) */
+.tarjeta.visible:hover,
+.tarjeta-estudis.visible:hover,
+.tarjeta-projecte.visible:hover,
+.currículum.visible:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    border-color: rgba(0, 255, 255, 0.5);
+}
+
+
+/* Quan un projecte es mostra de nou (en filtrar) apareix amb un petit "pop" */
+.tarjeta-projecte.visible {
+    animation: entrar-filtre 0.5s ease-out;
+}
+
+
+/* ==============================
+   KEYFRAMES (definicio de les animacions)
+   ============================== */
+
+/* La capcalera entra des de dalt */
+@keyframes entrar-dalt {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+}
+
+/* La imatge de fons de la capcalera es desplaca de costat a costat */
+@keyframes moure-fons {
+    from {
+        background-position: 0 0, 0% 50%;
+    }
+    to {
+        background-position: 0 0, 100% 50%;
+    }
+}
+
+/* El degradat del titol corre cap a la dreta */
+@keyframes brillar-titol {
+    to {
+        background-position: 200% 50%;
+    }
+}
+
+/* Aparicio suau nomes amb opacitat */
+@keyframes aparicio-suau {
+    from {
+        opacity: 0;
+    }
+}
+
+/* Llum que creix i decreix al voltant dels titols */
+@keyframes llum-titol {
+    from {
+        box-shadow: 0 0 0 0 currentColor;
+    }
+    to {
+        box-shadow: 0 0 14px 0 currentColor;
+    }
+}
+
+/* Entrada d'un projecte en canviar de filtre */
+@keyframes entrar-filtre {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+}
+
+/* Pols de llum del boto de descarrega */
+@keyframes pols-boto {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(0, 255, 255, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 0 12px rgba(0, 255, 255, 0);
+    }
+}
+
+/* Rebot de la fletxa */
+@keyframes rebotar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(4px);
+    }
+}
+
+
+/* ==============================
+   ACCESSIBILITAT
+   ============================== */
+
+/* Si l'usuari te desactivades les animacions al sistema, no es mou res */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .animar-scroll {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+
+/* ==============================
+   MOBIL
+   ============================== */
+
+@media (max-width: 600px) {
+    .titolencabezado {
+        font-size: 1.8rem;
+    }
+
+    .tarjeta,
+    .tarjeta-estudis {
+        padding: 25px 20px;
+    }
 }
